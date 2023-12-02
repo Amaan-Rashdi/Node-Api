@@ -18,7 +18,7 @@ const login = (data, done) => {
   username = data.username;
   password = data.password;
   dbConn.query(
-    "SELECT trainer.*,COUNT(trainersuseremail.gymname) AS noofgyms , COUNT(trainersuseremail.email) AS noofstudents FROM trainer LEFT JOIN trainersuseremail ON trainer.trainerid = trainersuseremail.trainerid WHERE username = ? AND password = ?",
+    "SELECT * from trainer WHERE username = ? AND password = ?",
     [username, password],
     (error, results, fields) => {
       if (error) return done("Error occured while retriving user data");
