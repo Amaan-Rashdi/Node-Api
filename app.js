@@ -6,7 +6,7 @@ const cors = require("cors");
 
 const config = require("./config");
 require("dotenv/config");
-require('dotenv').config();
+
 const bodyParser = require("body-parser");
 const morgan = require("morgan");
 const authJwt = require("./helpers/jwt");
