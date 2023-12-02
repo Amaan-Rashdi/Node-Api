@@ -6,6 +6,7 @@ const cors = require("cors");
 
 const config = require("./config");
 require("dotenv/config");
+require('dotenv').config();
 const bodyParser = require("body-parser");
 const morgan = require("morgan");
 const authJwt = require("./helpers/jwt");
@@ -25,12 +26,12 @@ const appRouter = require("./src");
 
 app.use("/api", appRouter);
 // "172.20.10.7"
-
+const PORT = process.env.PORT || config.PORT;
 const server = app.listen(config.PORT, () => {
   console.log("Listening on port", config.PORT);
 });
-// const server = app.listen(config.PORT,() => {
-//   console.log('Listening on port', config.PORT)
+// const server = app.listen(PORT,() => {
+//   console.log('Listening on port', PORT)
 // })
 
 module.exports = server;
