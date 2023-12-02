@@ -277,7 +277,7 @@ router.get("/trainer/announcements/:trainerId", (req, res) => {
 
 router.post("/user/login", (req, res) => {
   const data = req.body;
-  const username = data.username;
+  const username = data.firstname;
   const password = data.password;
   // let data = (req.body)
   // var user = data.username;
