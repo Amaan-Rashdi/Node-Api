@@ -43,11 +43,11 @@ const login = (data, done) => {
 // }
 
 const userlogin = (data, done) => {
-  username = data.username;
+  firstname = data.username;
   password = data.password;
   dbConn.query(
-    "SELECT * from userr WHERE username = ? AND password = ?",
-    [username, password],
+    "SELECT * from userr WHERE firstname = ? AND password = ?",
+    [firstname, password],
     (error, results, fields) => {
       if (error) return done("Error occured while retriving user data");
       done(undefined, results);
